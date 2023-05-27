@@ -1,4 +1,3 @@
-import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import PropTypes from "prop-types";
 
@@ -6,6 +5,8 @@ export const Profile = (props) => {
  const {
   fullName,bio,profession
  }= props.info;
+ const styleProfession={color:"green", fontFamily:"cursive", fontSize:"50px" }
+ const StyleBio ={color:"red",border:"1px solid yellow" };
   return (
   <div>
     <Carousel>
@@ -18,8 +19,8 @@ export const Profile = (props) => {
         <Carousel.Caption>
           {props.children}
           <h3><strong>{`My name is: ${fullName}`}</strong></h3>
-          <p style={{color:"red",border:"1px solid yellow" }}>{`My bio: ${bio}`}</p>
-          <p style={{color:"green", fontFamily:"cursive", fontSize:"50px" }}>{`My profession is: ${profession}`}</p>
+          <p style={StyleBio}>{`My bio: ${bio}`}</p>
+          <p style={styleProfession}>{`My profession is: ${profession}`}</p>
           <button onClick={() => props.alertFunction(fullName)}>
             who is using this
           </button>
